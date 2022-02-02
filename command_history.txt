@@ -1,0 +1,27 @@
+root@u-45755:/home/user/Docker# docker pull nginx:stable-alpine
+stable-alpine: Pulling from library/nginx
+97518928ae5f: Pull complete 
+a15dfa83ed30: Pull complete 
+acae0b19bbc1: Pull complete 
+fd4282442678: Pull complete 
+b521ea0d9e3f: Pull complete 
+b3282d03aa58: Pull complete 
+Digest: sha256:74694f2de64c44787a81f0554aa45b281e468c0c58b8665fafceda624d31e556
+Status: Downloaded newer image for nginx:stable-alpine
+docker.io/library/nginx:stable-alpine
+
+root@u-45755:/home/user/Docker# docker tag nginx:stable-alpine nginx:rbm-dkr-07
+
+root@u-45755:/home/user/Docker# docker images
+REPOSITORY    TAG             IMAGE ID       CREATED        SIZE
+nginx         stable          d6c9558ba445   7 days ago     141MB
+nginx         rbm-dkr-07      373f8d4d4c60   2 months ago   23.2MB
+nginx         stable-alpine   373f8d4d4c60   2 months ago   23.2MB
+hello-world   latest          feb5d9fea6a5   4 months ago   13.3kB
+
+root@u-45755:/home/user/Docker# docker run -d nginx:rbm-dkr-07
+c059d59dbd64f07f30ff09d83d327edd8d315cd3e51db0a616ab2cd880858d91
+
+root@u-45755:/home/user/Docker# docker ps 
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS          PORTS     NAMES
+c059d59dbd64   nginx:rbm-dkr-07   "/docker-entrypoint.…"   22 seconds ago   Up 21 seconds   80/tcp    cool_tesla
